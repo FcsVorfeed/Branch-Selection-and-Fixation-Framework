@@ -1,25 +1,25 @@
-## 从多项式根的分支交换到量子测量的构想
+## From Branch Switching of Polynomial Roots to Quantum Measurement: A Conceptual Proposal
 
 
 
-## 这是一个模糊的联想：
+## A Loose Association:
 
-最初让我联想到波函数坍缩的，是求根、开根时，某一个根被求出或确定下来”的直观印象：面对多个可能结果，经由某种操作，一个结果变得确定。由此产生一个想法：能不能尝试把类似波函数坍缩的这种 “确定行为” 本身，定义成一种基本数学操作，并尝试规定它应满足的公理式规则？就像使用求根、开根等运算一样，让这种行为本身成为可以继续组合、推演和计算的工具。
+What first brought wavefunction collapse to mind was the intuitive impression that, in root finding or root extraction, "one particular root is found or made definite": among multiple possible outcomes, some operation makes one outcome definite. This led to a question: could this "act of making an outcome definite," reminiscent of wavefunction collapse, itself be defined as a basic mathematical operation, with axiomatic rules specifying its behavior? Like root finding and root extraction, it could then become a tool for further composition, deduction, and calculation.
 
-我暂时把这个方向叫作“分支选择与固定”。它还没有完整的定义或公理体系，也不想过早限定为某种解释：这些分支究竟代表什么，确定之后其他可能性怎样变化，都可以先保留。只是先提出这个想法的思路本身。
+I provisionally call this line of inquiry "branch selection and fixation." It does not yet have a complete definition or axiomatic system, and I do not want to commit prematurely to any particular interpretation. What these branches represent and how the other possibilities change once one is fixed can remain open for now. At this stage, I am only outlining the idea.
 
-这里描述的现象，大概不是想表达普通的「开根号」，可能倾向于数学中「多值函数的分支交换（Branch Switching）」以及「单值化过程中的根置换（Root Permutation）」的现象。
+The phenomenon intended here is probably not ordinary "root extraction"; it may be closer to "branch switching in multivalued functions" and "root permutation in the process of making a function single-valued."
 
-这里有两个部分：
-- 根的交换与不确定性： 在某些数学条件下，方程的多个根会随着参数变化而交换身份，我们无法在整个参数空间中始终给它们贴上固定标签。
+There are two parts to this:
+- Root exchange and uncertainty: Under certain mathematical conditions, the roots of an equation exchange identities as its parameters change, so we cannot consistently assign them fixed labels throughout the parameter space.
 
-- 通过某种操作固定一个结果： 能不能定义一种新的数学操作，描述从多个可能分支中选定一个分支，并把这个选择过程本身纳入数学计算？
+- Fixing one outcome through an operation: Can we define a new mathematical operation that describes selecting one of several possible branches, and incorporate the selection process itself into mathematical calculation?
 
 
 
-## 数学现象：根的交换（Monodromy）
+## A Mathematical Phenomenon: Root Exchange (Monodromy)
 
-一个典型的例子：
+A typical example is 
 
 $$
  z^2=w 
@@ -27,7 +27,7 @@ $$
 
 
 
-它有两个根：
+It has two roots: 
 
 $$
  z_1=\sqrt{w},\qquad z_2=-\sqrt{w} 
@@ -35,7 +35,7 @@ $$
 
 
 
-假设我们让 $w$ 在复平面上绕原点转一圈：
+Suppose we let $w$ make one circuit around the origin in the complex plane: 
 
 $$
  w=e^{i\theta},\quad 0\leq\theta\leq 2\pi 
@@ -43,13 +43,13 @@ $$
 
 
 
-那么两个根可以写成：
+The two roots can then be written as 
 
 $$
  z_1=e^{i\theta/2} 
 $$
 
-，
+, 
 
 $$
  z_2=-e^{i\theta/2} 
@@ -57,13 +57,13 @@ $$
 
 
 
-当 $w$ 绕原点一圈，回到原来的位置时：
+When $w$ makes one circuit around the origin and returns to its starting point: 
 
 $$
  z_1\longrightarrow z_2 
 $$
 
-，
+, 
 
 $$
  z_2\longrightarrow z_1 
@@ -71,13 +71,13 @@ $$
 
 
 
-也就是说：输入参数明明已经回到了原来的位置，但两个根却交换了身份。
+In other words, the input parameter has returned to its starting point, but the two roots have exchanged identities.
 
 
 
-对于三次方程，情况还可以更复杂：三个根可能循环交换。
+For a cubic equation, the situation can be more complex: the three roots may undergo a cyclic exchange.
 
-例如：
+For example: 
 
 $$
  z^3=w 
@@ -85,7 +85,7 @@ $$
 
 
 
-三个根分别为：
+The three roots are: 
 
 $$
  z_k=e^{i(\theta+2k\pi)/3} 
@@ -93,30 +93,30 @@ $$
 
 
 
-当 $w$ 绕原点一周，三个根会依次交换位置，形成一个三循环。
+When $w$ makes one circuit around the origin, the three roots exchange positions in sequence, forming a three-cycle.
 
 
 
-参数 w 沿复平面中的单位圆走一圈，连续追踪其中一个根：
+Let the parameter w make one circuit along the unit circle in the complex plane while we continuously track one root:
 
-$z^2 = w$，$w = \exp(i\theta)$，$z_+(\theta) = \exp(i\theta/2)$
-$\theta$：$0 \to 2\pi$；$w$：$1 \to 1$；$z_+$：$1 \to -1$
+$z^2 = w$, $w = \exp(i\theta)$, $z_+(\theta) = \exp(i\theta/2)$
+$\theta$: $0 \to 2\pi$; $w$: $1 \to 1$; $z_+$: $1 \to -1$
 
-参数回到了原处，追踪的分支却到了另一个根；再绕一圈才复原。
+The parameter returns to its starting point, but the tracked branch reaches the other root; it returns to its initial value only after a second circuit.
 
-这是数学上的路径效应，和「根不断交换位置，原本无法确定哪个是哪个」的描述很接近。
-
-
-
-## 物理现象的联系
-
-这个现象似乎接近量子力学中的Exceptional Points（例外点）与量子态的拓扑交换。
-
-在某些非厄米量子系统中，哈密顿量的本征值和本征态会在特殊参数位置发生合并。
+This mathematical effect depends on the path taken. It closely resembles the description "the roots keep exchanging positions, and it is initially impossible to tell which is which."
 
 
 
-假设：
+## Connections to Physical Phenomena
+
+This phenomenon seems related to exceptional points in quantum mechanics and to topological exchanges of quantum states.
+
+In certain non-Hermitian quantum systems, the eigenvalues and eigenstates of the Hamiltonian coalesce at particular points in parameter space.
+
+
+
+Suppose: 
 
 $$
  H(\lambda)|\psi\rangle=E(\lambda)|\psi\rangle 
@@ -124,7 +124,7 @@ $$
 
 
 
-在例外点附近，本征值可能表现为平方根分支：
+Near an exceptional point, the eigenvalues may exhibit square-root branching: 
 
 $$
  E_\pm(\lambda)=E_0\pm\sqrt{\lambda} 
@@ -132,13 +132,13 @@ $$
 
 
 
-当参数绕例外点转一圈：
+When the parameter makes one circuit around the exceptional point: 
 
 $$
  E_+\longrightarrow E_- 
 $$
 
-，
+, 
 
 $$
  E_-\longrightarrow E_+ 
@@ -148,43 +148,43 @@ $$
 
 
 
-这和前面的平方根交换几乎是同一个数学结构。
+This has almost the same mathematical structure as the square-root exchange described above.
 
-2001 年，Dembowski 等人在微波谐振腔实验中观察到了例外点的拓扑结构，发现绕例外点一周会导致本征值和本征态交换。
+In 2001, Dembowski and colleagues observed the topological structure of an exceptional point in microwave-cavity experiments, finding that one circuit around the exceptional point led to an exchange of the eigenvalues and eigenstates.
 
-2025 年发表在 PRX Quantum 的研究，使用超导电路研究了三阶例外点附近的本征值编织（Eigenvalue Braiding）。
+A study published in PRX Quantum in 2025 used superconducting circuits to investigate eigenvalue braiding near a third-order exceptional point.
 
-研究观察到了三个本征态之间的拓扑交换，并用到了一个非常重要的数学工具：
+The study observed topological exchanges among three eigenstates and used a key mathematical tool: 
 
 $$
  B_3 
 $$
 
-，三股辫群（Braid Group）。
+, the three-strand braid group.
 
 
 
-比较有意思的地方在于：
+What is particularly interesting is this:
 
-原本想象的是三个根不断交换、无法固定身份，而现代量子物理中确实存在用「编织」描述多个本征态交换的理论。
+The initial picture was of three roots continually exchanging places, with no fixed identities; modern quantum physics does indeed have theories that describe exchanges among multiple eigenstates in terms of "braiding."
 
-不过例外点处的本征态交换，不等于普通量子测量中的波函数坍缩。
+However, the exchange of eigenstates at exceptional points is not the same as wavefunction collapse in ordinary quantum measurement.
 
-它们有相似的数学结构，但物理机制不同。
-
-
-
-## 是否能定义一种新的数学符号，专门描述「开根、翻牌、固定解」？
-
-我的想法实际上不是想重新发明平方根，而是想定义一个新的数学操作：
-
-**一个系统存在多个可能的分支，这些分支能够随着参数变化而交换身份；**
-
-**当发生某种特定操作时，其中一个分支被选定，并成为当前确定的状态。**
+Their mathematical structures are similar, but their physical mechanisms differ.
 
 
 
-尝试抽象出来，假设系统存在三个可能状态：
+## Can We Define a New Mathematical Symbol Specifically for "Root Extraction, Turning Over a Card, and Fixing a Solution"?
+
+My idea is not actually to reinvent the square root, but to define a new mathematical operation:
+
+**A system has several possible branches, which can exchange identities as its parameters change;**
+
+**When a particular operation occurs, one branch is selected and becomes the system's current definite state.**
+
+
+
+To express this abstractly, suppose a system has three possible states: 
 
 $$
  \mathcal{S}=\{s_1,s_2,s_3\} 
@@ -192,7 +192,7 @@ $$
 
 
 
-我们定义一个新的操作，暂时叫作：
+Let us define a new operation, provisionally denoted by 
 
 $$
  \boxed{\mathfrak{F}} 
@@ -200,15 +200,15 @@ $$
 
 
 
-称为「分支固定算子」（这是我为讨论提出的临时符号，不是已有的标准数学符号）。
+We call it the "branch fixation operator" (this is a provisional symbol I have introduced for discussion, not an established mathematical symbol).
 
-它有两个部分。
+It has two parts.
 
 
 
-第一部分：分支交换。
+Part One: Branch Exchange.
 
-定义一个交换操作：
+Define an exchange operation: 
 
 $$
  \mathfrak{P}: (s_1,s_2,s_3) \longrightarrow (s_2,s_3,s_1) 
@@ -216,13 +216,13 @@ $$
 
 
 
-它代表三个可能状态发生循环置换。
+This represents a cyclic permutation of the three possible states.
 
 
 
-第二部分：分支固定。
+Part Two: Branch Fixation.
 
-定义：
+Define: 
 
 $$
  \mathfrak{F}_k(\mathcal{S})=s_k 
@@ -230,9 +230,9 @@ $$
 
 
 
-它代表从多个可能分支中选出一个。
+This represents selecting one of several possible branches.
 
-于是我们可以把你的思路写成：
+We can therefore express your idea as 
 
 $$
  \boxed{ \mathcal{S} \xrightarrow{\mathfrak{P}} \mathcal{S}' \xrightarrow{\mathfrak{F}_k} s_k } 
@@ -242,28 +242,28 @@ $$
 
 
 
-这个过程可以理解为：
+This process can be understood as follows:
 
-1. 系统具有多个可区分的可能分支。
-2. 分支在演化过程中发生交换。
-3. 某个操作触发分支选择。
-4. 系统进入一个确定的分支。
+1. The system has multiple distinguishable possible branches.
+2. The branches exchange identities as the system evolves.
+3. An operation triggers branch selection.
+4. The system enters a definite branch.
 
 
 
-但是这里有一个问题：
+But this raises a question about 
 
 $$
  \mathfrak{F}_k 
 $$
 
+:
 
+How is $k$ determined?
 
-如何确定 $k$？
+If we specify $k$ directly, this is simply a choice we make.
 
-如果我们直接指定 $k$，这只是人为选择。
-
-如果我们让它随机选择，就必须定义概率：
+If we let it select randomly, we must define the probability: 
 
 $$
  P(s_k) 
@@ -273,17 +273,17 @@ $$
 
 
 
-## 概念框架
+## Conceptual Framework
 
-尝试建立一个独立的概念框架，暂时叫：
+Let us try to develop an independent conceptual framework, provisionally called:
 
-分支选择与固定理论（Branch Selection and Fixation Framework）
+Branch Selection and Fixation Theory (Branch Selection and Fixation Framework)
 
-它可以有三个基本公理。
+It could have three basic axioms.
 
-### 公理 1：多分支存在
+### Axiom 1: Multiple Branches Exist
 
-一个系统在某个参数条件下存在多个可能状态：
+For a given parameter setting, a system has multiple possible states: 
 
 $$
  \Psi=\sum_{i=1}^{n}c_i|s_i\rangle 
@@ -291,9 +291,9 @@ $$
 
 
 
-### 公理 2：分支可以置换
+### Axiom 2: Branches Can Be Permuted
 
-当系统参数发生变化时，分支可能发生置换：
+As the system's parameters change, the branches may be permuted: 
 
 $$
  \mathfrak{P}(\Psi) = \sum_{i=1}^{n}c_i|s_{\sigma(i)}\rangle 
@@ -301,11 +301,11 @@ $$
 
 
 
-其中 $\sigma$ 是一个置换。
+where $\sigma$ is a permutation.
 
-### 公理 3：分支固定
+### Axiom 3: Branch Fixation
 
-当发生特定的选择事件时：
+When a particular selection event occurs: 
 
 $$
  \mathfrak{F}(\Psi)=|s_k\rangle 
@@ -313,33 +313,33 @@ $$
 
 
 
-其中 $k$ 是最终被选择的分支。
+where $k$ identifies the branch ultimately selected.
 
 
 
-## 问题
+## Questions
 
-这只是一个概念框架。可能存在下面的问题：
+This is only a conceptual framework. The following questions may arise:
 
-1. 什么条件触发固定？
-2. 为什么选择的是这个分支，而不是其他分支？
-3. 置换与固定是否存在时间关系？
-4. 固定之后，其他分支究竟是消失、不可观测，还是仍然存在？
-5. 多个根本身不断交换，直到某个操作把其中一个固定下？例如三个根不断轮换身份，某个时刻发生一次选择，最终固定一个根？
-6. 根其实一直存在，但我们无法确定当前哪个根对应哪个状态？所谓坍缩，可能只是通过某种操作确定了原本无法识别的分支？
-7. 根的交换和固定本身就是一种新的物理过程？不是人类观察导致选择，而是系统本身存在一种类似翻牌、开根、锁定的机制？
-
-
-
-在这里我无法回答这些问题，因为我也不知道。
+1. What conditions trigger fixation?
+2. Why is this branch selected rather than another?
+3. Is there a temporal relationship between permutation and fixation?
+4. After fixation, do the other branches disappear, become unobservable, or continue to exist?
+5. Do the roots themselves keep exchanging identities until an operation fixes one of them? For example, could three roots repeatedly exchange identities in a cycle until a selection at some point fixes one root?
+6. Do the roots in fact exist throughout, while we are unable to determine which root currently corresponds to which state? Could what we call collapse simply be an operation that identifies a previously unidentifiable branch?
+7. Could root exchange and fixation themselves constitute a new physical process? Could selection arise from an intrinsic mechanism in the system, analogous to turning over a card, extracting a root, or locking in an outcome, rather than from human observation?
 
 
 
-## 可能性解释
+I cannot answer these questions here, because I do not know the answers myself.
 
-先把所有可能性同时保留下来。
 
-假设存在一个系统：
+
+## An Interpretation in Terms of Possibilities
+
+Let us keep all possibilities open simultaneously for now.
+
+Suppose there is a system: 
 
 $$
  \Omega=\{\omega_1,\omega_2,\ldots,\omega_n\} 
@@ -347,47 +347,47 @@ $$
 
 
 
-这里的 $\Omega$ 不是已经确定的物理状态，而是一个可能性集合。
+Here, $\Omega$ is a set of possibilities, not an already determined physical state.
 
-我们暂时不规定：
+For now, we leave unspecified:
 
-- 这些可能性是否真实存在。
-- 它们是否会相互交换。
-- 它们是否只是观察者无法区分的状态。
-- 其中一个被确定后，其他状态是否消失。
-- 确定过程究竟是随机的还是有某种内在规律。
+- Whether these possibilities actually exist.
+- Whether they can exchange identities.
+- Whether they are merely states that an observer cannot distinguish.
+- Whether the other states disappear once one is made definite.
+- Whether the process of making one definite is random or follows some intrinsic rule.
 
-暂时只承认一个事实：系统的描述中存在多个可能性，而某些操作会改变我们对这些可能性的确定程度。
-
-
-
-## 数学对象
-
-这里描述的似乎是一个具有以下特征的对象：
-
-- 内部包含多个可能的解。
-- 这些解可能交换身份。
-- 交换过程可能无法通过单一标签完整描述。
-- 某种操作可以让其中一个解暂时或永久确定。
-- 确定操作本身也可能改变整个系统。
-
-我们可以暂时称它为动态分支对象（Dynamic Branch Object）。
-
-注意，这只是一个待研究的数学概念，不是已经建立的数学理论。
-
-这里不只研究多个解是什么，还要研究「多个解如何变化」以及「确定一个解这个操作本身会产生什么影响」。
+For now, we acknowledge only one fact: a system's description contains multiple possibilities, and certain operations alter our degree of certainty about those possibilities.
 
 
 
-## 数学结构
+## Mathematical Object
 
-这个构想一开始的描述：
+What is described here seems to be an object with the following properties:
 
-「开根，然后固定其中一个根。」
+- It contains multiple possible solutions.
+- These solutions may exchange identities.
+- The exchange process may not be fully describable using a single label.
+- An operation can make one solution definite, temporarily or permanently.
+- The act of making a solution definite may itself change the entire system.
+
+We may provisionally call this a dynamic branch object.
+
+Note that this is only a mathematical concept to be investigated, not an established mathematical theory.
+
+The aim is to study not only what the multiple solutions are, but also "how they change" and "what effects arise from the act of making one solution definite."
 
 
 
-普通的开根运算：
+## Mathematical Structure
+
+The initial description of this idea was:
+
+"Extract the roots, then fix one of them."
+
+
+
+Ordinary root extraction: 
 
 $$
  x=\sqrt{a} 
@@ -395,13 +395,13 @@ $$
 
 
 
-实际上已经预先规定了我们要寻找什么结果。
+This already specifies what result we seek.
 
-但如果我们反过来想：
+But what if we approached this the other way around?
 
-假设某个数学对象经过一次操作，会产生多个解，而这些解并不具有永久固定的身份。
+Suppose an operation on a mathematical object yields multiple solutions whose identities are not permanently fixed.
 
-那么我们能不能定义一种新的运算：
+Could we then define a new operation 
 
 $$
  \mathfrak{R}(X) 
@@ -409,9 +409,9 @@ $$
 
 
 
-它不直接返回一个数值，而是返回一个具有分支关系、交换规则和潜在固定状态的整体对象？
+that returns a single object encompassing branch relationships, exchange rules, and potential fixed states, rather than a numerical value directly?
 
-然后再定义另一种操作：
+Then define another operation: 
 
 $$
  \mathfrak{L}(\mathfrak{R}(X)) 
@@ -419,14 +419,14 @@ $$
 
 
 
-其中 $\mathfrak{L}$ 不一定消灭其他分支，而是让系统进入某种确定状态。
+where $\mathfrak{L}$ does not necessarily eliminate the other branches, but instead brings the system into some definite state.
 
 
 
-这两个符号目前只是研究草案。
+For now, these two symbols are only part of a preliminary research sketch.
 
-它提供了一个方向：把产生多种可能性和固定某种可能性，当作两种独立的基本数学操作。
+They suggest a direction: treat the generation of multiple possibilities and the fixation of one possibility as two independent basic mathematical operations.
 
-这样是否可以在不确定坍缩究竟是什么的情况下，先研究这套数学结构。
+Could this allow us to study the mathematical structure first, without yet knowing exactly what collapse is?
 
-先建立这个数学对象，它是否自洽，再看它能否描述量子测量。
+First construct the mathematical object and examine whether it is internally consistent; then ask whether it can describe quantum measurement.
