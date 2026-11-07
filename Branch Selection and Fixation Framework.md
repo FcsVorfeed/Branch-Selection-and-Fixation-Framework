@@ -19,57 +19,15 @@ There are two parts to this:
 
 ## A Mathematical Phenomenon: Root Exchange (Monodromy)
 
-A typical example is 
+A typical example is \[ z^2=w \]
 
-$$
- z^2=w 
-$$
+It has two roots: \[ z_1=\sqrt{w},\qquad z_2=-\sqrt{w} \]
 
+Suppose we let \(w\) make one circuit around the origin in the complex plane: \[ w=e^{i\theta},\quad 0\leq\theta\leq 2\pi \]
 
+The two roots can then be written as \[ z_1=e^{i\theta/2} \], \[ z_2=-e^{i\theta/2} \]
 
-It has two roots: 
-
-$$
- z_1=\sqrt{w},\qquad z_2=-\sqrt{w} 
-$$
-
-
-
-Suppose we let $w$ make one circuit around the origin in the complex plane: 
-
-$$
- w=e^{i\theta},\quad 0\leq\theta\leq 2\pi 
-$$
-
-
-
-The two roots can then be written as 
-
-$$
- z_1=e^{i\theta/2} 
-$$
-
-, 
-
-$$
- z_2=-e^{i\theta/2} 
-$$
-
-
-
-When $w$ makes one circuit around the origin and returns to its starting point: 
-
-$$
- z_1\longrightarrow z_2 
-$$
-
-, 
-
-$$
- z_2\longrightarrow z_1 
-$$
-
-
+When \(w\) makes one circuit around the origin and returns to its starting point: \[ z_1\longrightarrow z_2 \], \[ z_2\longrightarrow z_1 \]
 
 In other words, the input parameter has returned to its starting point, but the two roots have exchanged identities.
 
@@ -77,30 +35,18 @@ In other words, the input parameter has returned to its starting point, but the 
 
 For a cubic equation, the situation can be more complex: the three roots may undergo a cyclic exchange.
 
-For example: 
+For example: \[ z^3=w \]
 
-$$
- z^3=w 
-$$
+The three roots are: \[ z_k=e^{i(\theta+2k\pi)/3} \]
 
-
-
-The three roots are: 
-
-$$
- z_k=e^{i(\theta+2k\pi)/3} 
-$$
-
-
-
-When $w$ makes one circuit around the origin, the three roots exchange positions in sequence, forming a three-cycle.
+When \(w\) makes one circuit around the origin, the three roots exchange positions in sequence, forming a three-cycle.
 
 
 
 Let the parameter w make one circuit along the unit circle in the complex plane while we continuously track one root:
 
-$z^2 = w$, $w = \exp(i\theta)$, $z_+(\theta) = \exp(i\theta/2)$
-$\theta$: $0 \to 2\pi$; $w$: $1 \to 1$; $z_+$: $1 \to -1$
+z² = w, w = exp(iθ), z₊(θ) = exp(iθ/2)
+θ: 0 → 2π; w: 1 → 1; z₊: 1 → −1
 
 The parameter returns to its starting point, but the tracked branch reaches the other root; it returns to its initial value only after a second circuit.
 
@@ -116,35 +62,11 @@ In certain non-Hermitian quantum systems, the eigenvalues and eigenstates of the
 
 
 
-Suppose: 
+Suppose: \[ H(\lambda)|\psi\rangle=E(\lambda)|\psi\rangle \]
 
-$$
- H(\lambda)|\psi\rangle=E(\lambda)|\psi\rangle 
-$$
+Near an exceptional point, the eigenvalues may exhibit square-root branching: \[ E_\pm(\lambda)=E_0\pm\sqrt{\lambda} \]
 
-
-
-Near an exceptional point, the eigenvalues may exhibit square-root branching: 
-
-$$
- E_\pm(\lambda)=E_0\pm\sqrt{\lambda} 
-$$
-
-
-
-When the parameter makes one circuit around the exceptional point: 
-
-$$
- E_+\longrightarrow E_- 
-$$
-
-, 
-
-$$
- E_-\longrightarrow E_+ 
-$$
-
-
+When the parameter makes one circuit around the exceptional point: \[ E_+\longrightarrow E_- \], \[ E_-\longrightarrow E_+ \]
 
 
 
@@ -154,13 +76,7 @@ In 2001, Dembowski and colleagues observed the topological structure of an excep
 
 A study published in PRX Quantum in 2025 used superconducting circuits to investigate eigenvalue braiding near a third-order exceptional point.
 
-The study observed topological exchanges among three eigenstates and used a key mathematical tool: 
-
-$$
- B_3 
-$$
-
-, the three-strand braid group.
+The study observed topological exchanges among three eigenstates and used a key mathematical tool: \[ B_3 \], the three-strand braid group.
 
 
 
@@ -184,21 +100,9 @@ My idea is not actually to reinvent the square root, but to define a new mathema
 
 
 
-To express this abstractly, suppose a system has three possible states: 
+To express this abstractly, suppose a system has three possible states: \[ \mathcal{S}=\{s_1,s_2,s_3\} \]
 
-$$
- \mathcal{S}=\{s_1,s_2,s_3\} 
-$$
-
-
-
-Let us define a new operation, provisionally denoted by 
-
-$$
- \boxed{\mathfrak{F}} 
-$$
-
-
+Let us define a new operation, provisionally denoted by \[ \boxed{\mathfrak{F}} \]
 
 We call it the "branch fixation operator" (this is a provisional symbol I have introduced for discussion, not an established mathematical symbol).
 
@@ -208,13 +112,7 @@ It has two parts.
 
 Part One: Branch Exchange.
 
-Define an exchange operation: 
-
-$$
- \mathfrak{P}: (s_1,s_2,s_3) \longrightarrow (s_2,s_3,s_1) 
-$$
-
-
+Define an exchange operation: \[ \mathfrak{P}: (s_1,s_2,s_3) \longrightarrow (s_2,s_3,s_1) \]
 
 This represents a cyclic permutation of the three possible states.
 
@@ -222,23 +120,11 @@ This represents a cyclic permutation of the three possible states.
 
 Part Two: Branch Fixation.
 
-Define: 
-
-$$
- \mathfrak{F}_k(\mathcal{S})=s_k 
-$$
-
-
+Define: \[ \mathfrak{F}_k(\mathcal{S})=s_k \]
 
 This represents selecting one of several possible branches.
 
-We can therefore express your idea as 
-
-$$
- \boxed{ \mathcal{S} \xrightarrow{\mathfrak{P}} \mathcal{S}' \xrightarrow{\mathfrak{F}_k} s_k } 
-$$
-
-
+We can therefore express your idea as \[ \boxed{ \mathcal{S} \xrightarrow{\mathfrak{P}} \mathcal{S}' \xrightarrow{\mathfrak{F}_k} s_k } \]
 
 
 
@@ -251,25 +137,13 @@ This process can be understood as follows:
 
 
 
-But this raises a question about 
+But this raises a question about \[ \mathfrak{F}_k \]:
 
-$$
- \mathfrak{F}_k 
-$$
+How is \(k\) determined?
 
-:
+If we specify \(k\) directly, this is simply a choice we make.
 
-How is $k$ determined?
-
-If we specify $k$ directly, this is simply a choice we make.
-
-If we let it select randomly, we must define the probability: 
-
-$$
- P(s_k) 
-$$
-
-
+If we let it select randomly, we must define the probability: \[ P(s_k) \]
 
 
 
@@ -283,37 +157,19 @@ It could have three basic axioms.
 
 ### Axiom 1: Multiple Branches Exist
 
-For a given parameter setting, a system has multiple possible states: 
-
-$$
- \Psi=\sum_{i=1}^{n}c_i|s_i\rangle 
-$$
-
-
+For a given parameter setting, a system has multiple possible states: \[ \Psi=\sum_{i=1}^{n}c_i|s_i\rangle \]
 
 ### Axiom 2: Branches Can Be Permuted
 
-As the system's parameters change, the branches may be permuted: 
+As the system's parameters change, the branches may be permuted: \[ \mathfrak{P}(\Psi) = \sum_{i=1}^{n}c_i|s_{\sigma(i)}\rangle \]
 
-$$
- \mathfrak{P}(\Psi) = \sum_{i=1}^{n}c_i|s_{\sigma(i)}\rangle 
-$$
-
-
-
-where $\sigma$ is a permutation.
+where \(\sigma\) is a permutation.
 
 ### Axiom 3: Branch Fixation
 
-When a particular selection event occurs: 
+When a particular selection event occurs: \[ \mathfrak{F}(\Psi)=|s_k\rangle \]
 
-$$
- \mathfrak{F}(\Psi)=|s_k\rangle 
-$$
-
-
-
-where $k$ identifies the branch ultimately selected.
+where \(k\) identifies the branch ultimately selected.
 
 
 
@@ -339,15 +195,9 @@ I cannot answer these questions here, because I do not know the answers myself.
 
 Let us keep all possibilities open simultaneously for now.
 
-Suppose there is a system: 
+Suppose there is a system: \[ \Omega=\{\omega_1,\omega_2,\ldots,\omega_n\} \]
 
-$$
- \Omega=\{\omega_1,\omega_2,\ldots,\omega_n\} 
-$$
-
-
-
-Here, $\Omega$ is a set of possibilities, not an already determined physical state.
+Here, \(\Omega\) is a set of possibilities, not an already determined physical state.
 
 For now, we leave unspecified:
 
@@ -387,13 +237,7 @@ The initial description of this idea was:
 
 
 
-Ordinary root extraction: 
-
-$$
- x=\sqrt{a} 
-$$
-
-
+Ordinary root extraction: \[ x=\sqrt{a} \]
 
 This already specifies what result we seek.
 
@@ -401,25 +245,13 @@ But what if we approached this the other way around?
 
 Suppose an operation on a mathematical object yields multiple solutions whose identities are not permanently fixed.
 
-Could we then define a new operation 
-
-$$
- \mathfrak{R}(X) 
-$$
-
-
+Could we then define a new operation \[ \mathfrak{R}(X) \]
 
 that returns a single object encompassing branch relationships, exchange rules, and potential fixed states, rather than a numerical value directly?
 
-Then define another operation: 
+Then define another operation: \[ \mathfrak{L}(\mathfrak{R}(X)) \]
 
-$$
- \mathfrak{L}(\mathfrak{R}(X)) 
-$$
-
-
-
-where $\mathfrak{L}$ does not necessarily eliminate the other branches, but instead brings the system into some definite state.
+where \(\mathfrak{L}\) does not necessarily eliminate the other branches, but instead brings the system into some definite state.
 
 
 
